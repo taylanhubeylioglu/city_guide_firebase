@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>503181496239-3tdriav3k6i28sunfhss4fv1bja34ama.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.503181496239-3tdriav3k6i28sunfhss4fv1bja34ama</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC6uw3a49-0c1jOjQT2JN57ITh6Ib1AXBc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>503181496239</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.cityGuideFirebase</string>
+	<key>PROJECT_ID</key>
+	<string>city-guide-firebase-a12d7</string>
+	<key>STORAGE_BUCKET</key>
+	<string>city-guide-firebase-a12d7.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:503181496239:ios:8da6b36012d46037c6e95a</string>
+</dict>
+</plist>
