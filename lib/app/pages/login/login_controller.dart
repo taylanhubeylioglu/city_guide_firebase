@@ -13,7 +13,7 @@ class LoginController extends Controller {
   String? email;
   String? password;
 
-  // Test için direkt sayfaya geçiş
+  // Test için direkt sayfaya geçi
   // @override
   // void onInitState() {
   //   FirebaseAuth.instance.authStateChanges().listen((User? user) {
