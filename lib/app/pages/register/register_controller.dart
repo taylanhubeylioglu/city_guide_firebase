@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:city_guide_firebase/app/pages/home/home_view.dart';
 import 'package:city_guide_firebase/domain/repositories/user_repository.dart';
 import 'package:firebase_auth/firebase_auth.dart';
