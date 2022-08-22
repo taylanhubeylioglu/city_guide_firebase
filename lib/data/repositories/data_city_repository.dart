@@ -82,4 +82,20 @@ class DataCityRepository implements CityRepository {
       print(stackTrace);
     }
   }
+
+  @override
+  Stream<List<City>> getPersonalCities() {
+    try {
+      if (!isCitiesFetched) _initCity();
+
+      Future.delayed(Duration.zero)
+          .then((value) => _streamController.add(_cityList));
+
+      return _streamController.stream;
+    } catch (error, stackTrace) {
+      print(error);
+      print(stackTrace);
+      rethrow;
+    }
+  }
 }
