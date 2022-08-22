@@ -1,27 +1,27 @@
-import 'package:city_guide_firebase/app/pages/home/home_controller.dart';
-import 'package:city_guide_firebase/app/pages/profile/profile_view.dart';
-import 'package:city_guide_firebase/data/repositories/data_city_repository.dart';
+import 'package:city_guide_firebase/app/pages/home/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
 import 'package:lottie/lottie.dart';
 
+import '../../../data/repositories/data_city_repository.dart';
 import '../../../domain/entities/city.dart';
 import '../addCity/addCity_view.dart';
 import '../cityDetail/cityDetail_view.dart';
+import 'profile_controller.dart';
 
-class HomeView extends View {
+class ProfileView extends View {
   @override
   State<StatefulWidget> createState() {
-    return _HomeViewState(
-      HomeController(
+    return _ProfileViewState(
+      ProfileController(
         DataCityRepository(),
       ),
     );
   }
 }
 
-class _HomeViewState extends ViewState<HomeView, HomeController> {
-  _HomeViewState(HomeController controller) : super(controller);
+class _ProfileViewState extends ViewState<ProfileView, ProfileController> {
+  _ProfileViewState(ProfileController controller) : super(controller);
 
   @override
   Widget get view {
@@ -59,33 +59,38 @@ class _HomeViewState extends ViewState<HomeView, HomeController> {
                     child: Row(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(left: 130),
-                          child: Text(
-                            "Firebase App",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 17,
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                        ),
-                        Spacer(),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 22),
-                          child: GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => ProfileView(),
+                          padding: const EdgeInsets.only(left: 15),
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(right: 55),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => HomeView()),
+                                    );
+                                  },
+                                  child: Icon(
+                                    Icons.home,
+                                    size: 25,
+                                    color: Colors.white,
+                                  ),
                                 ),
-                              );
-                            },
-                            child: Icon(
-                              Icons.account_circle_outlined,
-                              size: 38,
-                              color: Colors.white,
-                            ),
+                              ),
+                              SizedBox(
+                                width: 50,
+                              ),
+                              Text(
+                                "Firebase App",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ],
@@ -93,7 +98,7 @@ class _HomeViewState extends ViewState<HomeView, HomeController> {
                   ),
                   Column(
                     children: [
-                      ControlledWidgetBuilder<HomeController>(
+                      ControlledWidgetBuilder<ProfileController>(
                           builder: (context, controller) {
                         return controller.cities != null &&
                                 controller.cities!.length != 0
@@ -102,7 +107,7 @@ class _HomeViewState extends ViewState<HomeView, HomeController> {
                                   for (int i = 0;
                                       i < controller.cities!.length;
                                       i++)
-                                    _HomeCityCard(controller.cities![i]),
+                                    _ProfileCityCard(controller.cities![i]),
                                 ],
                               )
                             : Lottie.asset('assets/animations/loading.json');
@@ -119,10 +124,10 @@ class _HomeViewState extends ViewState<HomeView, HomeController> {
   }
 }
 
-class _HomeCityCard extends StatelessWidget {
+class _ProfileCityCard extends StatelessWidget {
   final City city;
 
-  _HomeCityCard(this.city);
+  _ProfileCityCard(this.city);
 
   @override
   Widget build(BuildContext context) {
